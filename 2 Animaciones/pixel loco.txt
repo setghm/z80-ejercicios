@@ -1,0 +1,27 @@
+80 40 20 10 20 40 80
+
+80		80		-> 4000		; direccion desde la que leera hl
+40		40		-> 4001
+20		20		-> 4002
+10		10		-> 4003
+20		20		-> 4004
+40		40		-> 4005		; direccion hasta la que llegara hl
+00		06		-> 4006
+ld hl,#4000	21 00 40	-> 4007		; Cargamos la direccion inicial de hl 	INICIO DEL PROGRAMA
+ld a,#06	3E 06		-> 400A		; El valor inicial del contador es 6
+ld (#4006),a	32 06 40	-> 400C		; guardamos el valor del contador en memoria
+ld a,(hl)	7E				; cargamos desde donde apunta hl al acumulador
+ld (#C000),a	32 00 C0			; Cargamos en la memoria de video el valor actual
+inc hl		23				; incrementamos la posicion a la que apunta hl
+ld a,#3C	3E 3C				; hacemos HALT 60 veces
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,(#4006)	3A 06 40			; cargamos el valor del contador en a
+dec a		3D				; restamos 1 al contador
+jp nz,#400C	C2 0C 40			; saltamos a guardar el contador si aun no llega a cero
+jp #4007	C3 07 40			; Reinicio del programa
+
+80 40 20 10 20 40 00 21 00 40 3E 06 32 06 40 7E 32 00 C0 23 3E 3C 76 3D 20 FC 3A 06 40 3D C2 0C 40 C3 07 40
+
+37 lineas -> 21 lineas

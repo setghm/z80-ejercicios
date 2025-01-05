@@ -1,0 +1,43 @@
+8000 4000 2000 1000 0080 0040 0020 0010
+
+80
+20
+40
+10
+04
+ld hl,(#4000)	21 00 40		-> Parte 1 #4005
+ld a,#00	3E 00
+ld (#C001),a	32 01 C0
+ld a,#04	3E 04
+ld (#4004),a	32 04 40		-> Salto de bucle #400F
+ld a,(hl)	7E
+ld (#C000),a	32 00 C0
+inc hl		23
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,(#4004)	3A 04 40
+dec a		3D
+jp nz,#400F	C2 0F 40
+ld hl,(#4000)	21 00 40		-> Parte 2 #4024
+ld a,#00	3E 00
+ld (#C000),a	32 00 C0
+ld a,#04	3E 04
+ld (#4004),a	32 04 40		-> Salto de bucle #402E
+ld a,(hl)	7E
+ld (#C001),a	32 01 C0
+inc hl		23
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,(#4004)	3A 04 40
+dec a		3D
+jp nz,#402E	C2 2E 40
+jp #4005	C3 05 40
+
+80 40 20 10 00
+21 00 40 3E 00 32 01 C0 3E 04 32 04 40 7E 32 00 C0 23 3E 3C 76 3D 20 FC 3A 04 40 3D C2 0F 40
+21 00 40 3E 00 32 00 C0 3E 04 32 04 40 7E 32 01 C0 23 3E 3C 76 3D 20 FC 3A 04 40 3D C2 2E 40
+C3 05 40

@@ -1,0 +1,48 @@
+jp ** -> c3
+halt -> 76
+
+ld hl,#C000
+ld a,#88
+ld (hl),a
+halt -> 30
+ld a,#44
+ld (hl),a
+halt -> 30
+ld a,#22
+ld (hl),a
+halt -> 30
+ld a,#11
+ld (hl),a
+halt -> 30
+jp #4001
+
+; animar los 4 primeros pixeles
+
+ld hl,#C000	21 00 C0
+ld a,#88	3E 88
+ld (hl),a	77
+ld c,#3C	0E 3C
+halt		76
+dec c		0D
+jr nz,#FC	20 FC
+ld a,#44	3E 44
+ld (hl),a	77
+ld c,#3C	0E 3C
+halt		76
+dec c		0D
+jr nz,#FC	20 FC
+ld a,#22	3E 22
+ld (hl),a	77
+ld c,#3C	0E 3C
+halt		76
+dec c		0D
+jr nz,#FC	20 FC
+ld a,#11	3E 11
+ld (hl),a	77
+ld c,#3C	0E 3C
+halt		76
+dec c		0D
+jr nz,#FC	20 FC
+jp #4001	C3 01 40
+
+21 00 C0 3E 88 77 0E 3C 76 0D 20 FC 3E 44 77 0E 3C 76 0D 20 FC 3E 22 77 0E 3C 76 0D 20 FC 3E 11 77 0E 3C 76 0D 20 FC C3 01 40

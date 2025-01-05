@@ -1,0 +1,124 @@
+FF F7 F3 F1	rojo -> amarillo
+F0 70 30 10	amarillo -> azul
+00 08 0C 0E	azul -> cyan
+0F 8F CF EF	cyan -> rojo
+
+ld hl,#C000	21 00 C0
+ld a,#FF	3E FF
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#F7	3E F7
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#F3	3E F3
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#F1	3E F1
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#F0	3E F0
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#70	3E 70
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#30	3E 30
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#10	3E 10
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#00	3E 00
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#08	3E 08
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#0C	3E 0C
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#0E	3E 0E
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#0F	3E 0F
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#8F	3E 8F
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#CF	3E CF
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld a,#EF	3E EF
+ld (hl),a	77
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+jp #4001	C3 01 40
+
+21 00 C0
+3E FF 77 3E 3C 76 3D 20 FC
+3E F7 77 3E 3C 76 3D 20 FC
+3E F3 77 3E 3C 76 3D 20 FC
+3E F1 77 3E 3C 76 3D 20 FC
+3E F0 77 3E 3C 76 3D 20 FC
+3E 70 77 3E 3C 76 3D 20 FC
+3E 30 77 3E 3C 76 3D 20 FC
+3E 10 77 3E 3C 76 3D 20 FC
+3E 00 77 3E 3C 76 3D 20 FC
+3E 08 77 3E 3C 76 3D 20 FC
+3E 0C 77 3E 3C 76 3D 20 FC
+3E 0E 77 3E 3C 76 3D 20 FC
+3E 0F 77 3E 3C 76 3D 20 FC
+3E 8F 77 3E 3C 76 3D 20 FC
+3E CF 77 3E 3C 76 3D 20 FC
+3E EF 77 3E 3C 76 3D 20 FC
+C3 01 40
+
+21 00 C0 3E FF 77 3E 3C 76 3D 20 FC 3E F7 77 3E 3C 76 3D 20 FC 3E F3 77 3E 3C 76 3D 20 FC 3E F1 77 3E 3C 76 3D 20 FC 3E F0 77 3E 3C 76 3D 20 FC 3E 70 77 3E 3C 76 3D 20 FC 3E 30 77 3E 3C 76 3D 20 FC 3E 10 77 3E 3C 76 3D 20 FC 3E 00 77 3E 3C 76 3D 20 FC 3E 08 77 3E 3C 76 3D 20 FC 3E 0C 77 3E 3C 76 3D 20 FC 3E 0E 77 3E 3C 76 3D 20 FC 3E 0F 77 3E 3C 76 3D 20 FC 3E 8F 77 3E 3C 76 3D 20 FC 3E CF 77 3E 3C 76 3D 20 FC 3E EF 77 3E 3C 76 3D 20 FC C3 01 40

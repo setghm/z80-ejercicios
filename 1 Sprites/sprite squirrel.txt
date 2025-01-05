@@ -1,0 +1,87 @@
+C394
+	94 95  96 97
+
+C394	00 00  00 00 
+CB94	00 11  44 00
+D394	33 11  EE 00
+DB94	33 11  FB 00
+E394	33 99  FF 80
+EB94	11 99  FF 88
+F394	11 DD  CC 00
+FB94	11 DD  CD 00
+
+	E4 E5  E6 E7
+
+C3E4	33 99  CF 08
+CBE4	33 BB  FF 88
+D3E4	77 77  FF 00
+DBE4	77 77  CC 00
+E3E4	33 FF  88 00
+EBE4	11 FF  EE 00
+F3E4	00 FF  FF 00
+FBE4	00 00  00 00
+
+ld hl,#0000
+ld (#C394),hl
+ld (#C396),hl
+ld hl,#1100
+ld (#CB94),hl
+ld hl,#0044
+ld (#CB96),hl
+ld hl,#1133
+ld (#D394),hl
+ld hl,#00EE
+ld (#D396),hl
+ld hl,#1133
+ld (#DB94),hl
+ld hl,#00FB
+ld (#DB96),hl
+ld hl,#9933
+ld (#E394),hl
+ld hl,#80FF
+ld (#E396),hl
+ld hl,#9911
+ld (#EB94),hl
+ld hl,#88FF
+ld (#EB96),hl
+ld hl,#DD11
+ld (#F394),hl
+ld hl,#00CC
+ld (#F396),hl
+ld hl,#DD11
+ld (#FB94),hl
+ld hl,#00CD
+ld (#FB96),hl
+ld hl,#9933
+ld (#C3E4),hl
+ld hl,#08CF
+ld (#C3E6),hl
+ld hl,#BB33
+ld (#CBE4),hl
+ld hl,#88FF
+ld (#CBE6),hl
+ld hl,#7777
+ld (#D3E4),hl
+ld hl,#00FF
+ld (#D3E6),hl
+ld hl,#7777
+ld (#DBE4),hl
+ld hl,#00CC
+ld (#DBE6),hl
+ld hl,#FF33
+ld (#E3E4),hl
+ld hl,#0088
+ld (#E3E6),hl
+ld hl,#FF11
+ld (#EBE4),hl
+ld hl,#00EE
+ld (#EBE6),hl
+ld hl,#FF00
+ld (#F3E4),hl
+ld hl,#00FF
+ld (#F3E6),hl
+ld hl,#0000
+ld (#FBE4),hl
+ld (#FBE6),hl
+
+21 00 00 22 94 C3 22 96 C3 21 00 11 22 94 CB 21 44 00 22 96 CB 21 33 11 22 94 D3 21 EE 00 22 96 D3 21 33 11 22 94 DB 21 FB 00 22 96 DB 21 33 99 22 94 E3 21 FF 80 22 96 E3 21 11 99 22 94 EB 21 FF 88 22 96 EB 21 11 DD 22 94 F3 21 CC 00 22 96 F3 21 11 DD 22 94 FB 21 CD 00 22 96 FB 21 33 99 22 E4 C3 21 CF 08 22 E6 C3 21 33 BB 22 E4 CB 21 FF 88 22 E6 CB 21 77 77 22 E4 D3 21 FF 00 22 E6 D3 21 77 77 22 E4 DB 21 CC 00 22 E6 DB 21 33 FF 22 E4 E3 21 88 00 22 E6 E3 21 11 FF 22 E4 EB 21 EE 00 22 E6 EB 21 00 FF 22 E4 F3 21 FF 00 22 E6 F3 21 00 00 22 E4 FB 22 E6 FB 18 FE

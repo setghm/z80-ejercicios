@@ -1,0 +1,234 @@
+FFFF F7FF F3FF F1FF F0FF F0F7 F0F3 F0F1		ROJO->AMARILLO
+F0F0 70F0 30F0 10F0 00F0 0070 0030 0010		AMARILLO->AZUL
+0000 0800 0C00 0E00 0F00 0F08 0F0C 0F0E		AZUL->CYAN
+0F0F 8F0F CF0F EF0F FF0F FF8F FFCF FFEF		CYAN->ROJO
+
+ld hl,#FFFF	21 FF FF
+ld (#C000),hl	22 00 0C
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#FFF7	21 F7 FF
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#FFF3	21 F3 FF
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#FFF1	21 F1 FF
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#FFF0	21 F0 FF
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F7F0	21 F0 F7
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F3F0	21 F0 F3
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F1F0	21 F0 F1
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F0F0	21 F0 F0
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F070	21 70 F0
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F030	21 30 F0
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F010	21 10 F0
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#F000	21 00 F0
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#7000	21 00 70
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#3000	21 00 30
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#1000	21 00 10
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0000	21 00 00
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0008	21 08 00
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#000C	0C 00
+ld (#C000),hl	22 0C 00
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#000E	21 0E 00
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#000F	21 0F 00
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#080F	21 0F 08
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0C0F	21 0F 0C
+ld (#C000),hl	22 00 0C
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0E0F	21 0F 0E
+ld (#C000),hl	22 00 0C
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0F0F	21 0F 0F
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0F8F	21 8F 0F
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0FCF	21 CF 0F
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0FEF	21 EF 0F
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#3C	20 3C
+ld hl,#0FFF	21 FF 0F
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#8FFF	21 FF 8F
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#CFFF	21 FF CF
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#EFFF	21 FF EF
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+jp #4000	C3 00 40
+
+21 FF FF 22 00 C0 3E 3C 76 3D 20 FC
+21 F7 FF 22 00 C0 3E 3C 76 3D 20 FC
+21 F3 FF 22 00 C0 3E 3C 76 3D 20 FC
+21 F1 FF 22 00 C0 3E 3C 76 3D 20 FC
+21 F0 FF 22 00 C0 3E 3C 76 3D 20 FC
+21 F0 F7 22 00 C0 3E 3C 76 3D 20 FC
+21 F0 F3 22 00 C0 3E 3C 76 3D 20 FC
+21 F0 F1 22 00 C0 3E 3C 76 3D 20 FC
+21 F0 F0 22 00 C0 3E 3C 76 3D 20 FC
+21 70 F0 22 00 C0 3E 3C 76 3D 20 FC
+21 30 F0 22 00 C0 3E 3C 76 3D 20 FC
+21 10 F0 22 00 C0 3E 3C 76 3D 20 FC
+21 00 F0 22 00 C0 3E 3C 76 3D 20 FC
+21 00 70 22 00 C0 3E 3C 76 3D 20 FC
+21 00 30 22 00 C0 3E 3C 76 3D 20 FC
+21 00 10 22 00 C0 3E 3C 76 3D 20 FC
+21 00 00 22 00 C0 3E 3C 76 3D 20 FC
+21 08 00 22 00 C0 3E 3C 76 3D 20 FC
+21 0C 00 22 00 C0 3E 3C 76 3D 20 FC
+21 0E 00 22 00 C0 3E 3C 76 3D 20 FC
+21 0F 00 22 00 C0 3E 3C 76 3D 20 FC
+21 0F 08 22 00 C0 3E 3C 76 3D 20 FC
+21 0F 0C 22 00 C0 3E 3C 76 3D 20 FC
+21 0F 0E 22 00 C0 3E 3C 76 3D 20 FC
+21 0F 0F 22 00 C0 3E 3C 76 3D 20 FC
+21 8F 0F 22 00 C0 3E 3C 76 3D 20 FC
+21 CF 0F 22 00 C0 3E 3C 76 3D 20 FC
+21 EF 0F 22 00 C0 3E 3C 76 3D 20 FC
+21 FF 0F 22 00 C0 3E 3C 76 3D 20 FC
+21 FF 8F 22 00 C0 3E 3C 76 3D 20 FC
+21 FF CF 22 00 C0 3E 3C 76 3D 20 FC
+21 FF EF 22 00 C0 3E 3C 76 3D 20 FC
+C3 00 40
+
+21 FF FF 22 00 C0 3E 3C 76 3D 20 FC 21 F7 FF 22 00 C0 3E 3C 76 3D 20 FC 21 F3 FF 22 00 C0 3E 3C 76 3D 20 FC 21 F1 FF 22 00 C0 3E 3C 76 3D 20 FC 21 F0 FF 22 00 C0 3E 3C 76 3D 20 FC 21 F0 F7 22 00 C0 3E 3C 76 3D 20 FC 21 F0 F3 22 00 C0 3E 3C 76 3D 20 FC 21 F0 F1 22 00 C0 3E 3C 76 3D 20 FC 21 F0 F0 22 00 C0 3E 3C 76 3D 20 FC 21 70 F0 22 00 C0 3E 3C 76 3D 20 FC 21 30 F0 22 00 C0 3E 3C 76 3D 20 FC 21 10 F0 22 00 C0 3E 3C 76 3D 20 FC 21 00 F0 22 00 C0 3E 3C 76 3D 20 FC 21 00 70 22 00 C0 3E 3C 76 3D 20 FC 21 00 30 22 00 C0 3E 3C 76 3D 20 FC 21 00 10 22 00 C0 3E 3C 76 3D 20 FC 21 00 00 22 00 C0 3E 3C 76 3D 20 FC 21 08 00 22 00 C0 3E 3C 76 3D 20 FC 21 0C 00 22 00 C0 3E 3C 76 3D 20 FC 21 0E 00 22 00 C0 3E 3C 76 3D 20 FC 21 0F 00 22 00 C0 3E 3C 76 3D 20 FC 21 0F 08 22 00 C0 3E 3C 76 3D 20 FC 21 0F 0C 22 00 C0 3E 3C 76 3D 20 FC 21 0F 0E 22 00 C0 3E 3C 76 3D 20 FC 21 0F 0F 22 00 C0 3E 3C 76 3D 20 FC 21 8F 0F 22 00 C0 3E 3C 76 3D 20 FC 21 CF 0F 22 00 C0 3E 3C 76 3D 20 FC 21 EF 0F 22 00 C0 3E 3C 76 3D 20 FC 21 FF 0F 22 00 C0 3E 3C 76 3D 20 FC 21 FF 8F 22 00 C0 3E 3C 76 3D 20 FC 21 FF CF 22 00 C0 3E 3C 76 3D 20 FC 21 FF EF 22 00 C0 3E 3C 76 3D 20 FC C3 00 40

@@ -1,0 +1,111 @@
+; animacion 1 extendida a 2 bytes
+
+8800 4400 2200 1100 0088 0044 0022 0011		1 rojo
+8000 4000 2000 1000 0080 0040 0020 0010		1 amarillo
+0800 0400 0200 0100 0008 0004 0002 0001		1 cyan
+
+ld hl,#0088	21 88 00
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0044	21 44 00
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0022	21 22 00
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0011	21 11 00
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#8800	21 00 88
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#4400	21 00 44
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#2200	21 00 22
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#1100	21 00 11
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+jp #4000	C3 00 40
+
+21 88 00 22 00 C0 3E 3C 76 3D 20 FC 21 44 00 22 00 C0 3E 3C 76 3D 20 FC 21 22 00 22 00 C0 3E 3C 76 3D 20 FC 21 11 00 22 00 C0 3E 3C 76 3D 20 FC 21 00 88 22 00 C0 3E 3C 76 3D 20 FC 21 00 44 22 00 C0 3E 3C 76 3D 20 FC 21 00 22 22 00 C0 3E 3C 76 3D 20 FC 21 00 11 22 00 C0 3E 3C 76 3D 20 FC C3 00 40
+
+; el pixel de color amarillo
+
+ld hl,#0080	21 80 00
+ld (#C000),hl	22 00 C0
+ld a,#3C	3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0040	21 40 00
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0020	21 20 00
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#0010	21 10 00
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#8000	21 00 80
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#4000	21 00 40
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#2000	21 00 20
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+ld hl,#1000	21 00 10
+ld (#C000),hl	22 00 C0
+ld a,3C		3E 3C
+halt		76
+dec a		3D
+jr nz,#FC	20 FC
+jp #4000	C3 00 40
+
+21 80 00 22 00 C0 3E 3C 76 3D 20 FC 21 40 00 22 00 C0 3E 3C 76 3D 20 FC 21 20 00 22 00 C0 3E 3C 76 3D 20 FC 21 10 00 22 00 C0 3E 3C 76 3D 20 FC 21 00 80 22 00 C0 3E 3C 76 3D 20 FC 21 00 40 22 00 C0 3E 3C 76 3D 20 FC 21 00 20 22 00 C0 3E 3C 76 3D 20 FC 21 00 10 22 00 C0 3E 3C 76 3D 20 FC C3 00 40

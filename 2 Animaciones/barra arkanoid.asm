@@ -1,0 +1,242 @@
+; BARRA DE C730 A C77C  LD HL,#C730
+
+; IR A LA DERECHA
+; CONTADOR
+LD C,#13
+; GUARDAR L PARA BORRAR
+LD A,L
+; DIBUJAR
+LD (HL),#77
+INC HL
+LD (HL),#0F
+INC HL
+LD (HL),#0F
+INC HL
+LD (HL),#EE
+; ESPERAMOS
+LD B,#50
+HALT
+DEC B
+JR NZ,#FC
+; BORRAR
+LD L,A
+LD (HL),#00
+INC HL
+LD (HL),#00
+INC HL
+LD (HL),#00
+INC HL
+LD (HL),#00
+; SIGUIENTE POSICIÓN
+INC HL
+DEC C
+JP NZ,#DE
+; IR A LA IZQUIERDA
+; CONTADOR
+LD C,#13
+; GUARDAR L PARA BORRAR
+LD A,L
+; DIBUJAR
+LD (HL),#EE
+DEC HL
+LD (HL),#0F
+DEC HL
+LD (HL),#0F
+DEC HL
+LD (HL),#77
+; ESPERAR
+LD B,#50
+HALT
+DEC B
+JR NZ,#FC
+; BORRAR
+LD L,A
+LD (HL),#00
+DEC HL
+LD (HL),#00
+DEC HL
+LD (HL),#00
+DEC HL
+LD (HL),#00
+; POSICIÓN ANTERIOR
+DEC HL
+DEC C
+JP NZ,#DE
+; REPETIR DESDE EL INICIO
+JP #4000
+
+21 30 C7
+0E 13
+7D
+36 77
+23
+36 0F
+23
+36 0F
+23
+36 EE
+06 50
+76
+05
+20 FC
+6F
+36 00
+23
+36 00
+23
+36 00
+23
+36 00
+23
+0D
+20 DE
+0E 13
+7D
+36 EE
+2B
+36 0F
+2B
+36 0F
+2B
+36 77
+06 50
+76
+05
+20 FC
+6F
+36 00
+2B
+36 00
+2B
+36 00
+2B
+36 00
+2B
+0D
+20 DE
+C3 00 40
+
+
+21 30 C7 0E 13 7D 36 77 23 36 0F 23 36 0F 23 36 EE 06 50 76 05 20 FC 6F 36 00 23 36 00 23 36 00 23 36 00 23 0D 20 DE 0E 13 7D 36 EE 2B 36 0F 2B 36 0F 2B 36 77 06 50 76 05 20 FC 6F 36 00 2B 36 00 2B 36 00 2B 36 00 2B 0D 20 DE C3 00 40
+
+
+LD L,#30        2E 30
+; TO RIGHT       
+LD C,#4D        0E 4D
+; DIBUJAR #4004  
+LD H,#C7        26 C7
+LD (HL),#77     36 77
+LD H,#CF        26 CF
+LD (HL),#FF     36 FF
+LD H,#D7        26 D7
+LD (HL),#FF     36 FF
+LD H,#DF        26 DF
+LD (HL),#77     36 77
+INC HL          23
+LD B,#02        06 02
+LD D,#0F        16 0F
+LD H,#C7        26 C7
+LD (HL),D       72
+LD H,#CF        26 CF
+LD (HL),D       72
+LD H,#D7        26 D7
+LD (HL),D       72
+LD H,#DF        26 DF
+LD (HL),D       72
+INC HL          23
+DEC B           05
+JR NZ,#F0       20 F0
+LD H,#C7        26 C7
+LD (HL),#EE     36 EE
+LD H,#CF        26 CF
+LD (HL),#FF     36 FF
+LD H,#D7        26 D7
+LD (HL),#FF     36 FF
+LD H,#DF        26 DF
+LD (HL),#EE     36 EE
+; ESPERAMOS      
+LD B,#14        06 14
+HALT            76
+DEC B           05
+JR NZ,#FC       20 FC
+; BORRAR         
+LD A,#04        3E 04
+LD B,#00        06 00
+LD H,#C7        26 C7
+LD (HL),B       70
+LD H,#CF        26 CF
+LD (HL),B       70
+LD H,#D7        26 D7
+LD (HL),B       70
+LD H,#DF        26 DF
+LD (HL),B       70
+DEC HL          2B
+DEC A           3D
+JR NZ,#F0       20 F0
+INC HL          23
+; NEXT POS       
+INC HL          23
+DEC C           0D
+JP NZ,#4004     C2 04 40
+; TO LEFT        
+LD C,#4A        0E 4A
+; DIBUJAR #405C  
+LD H,#C7        26 C7
+LD (HL),#EE     36 EE
+LD H,#CF        26 CF
+LD (HL),#FF     36 FF
+LD H,#D7        26 D7
+LD (HL),#FF     36 FF
+LD H,#DF        26 DF
+LD (HL),#EE     36 EE
+DEC HL          2B
+LD B,#02        06 02
+LD D,#0F        16 0F
+LD H,#C7        26 C7
+LD (HL),D       72
+LD H,#CF        26 CF
+LD (HL),D       72
+LD H,#D7        26 D7
+LD (HL),D       72
+LD H,#DF        26 DF
+LD (HL),D       72
+DEC HL          2B
+DEC B           05
+JR NZ,#F0       20 F0
+LD H,#C7        26 C7
+LD (HL),#77     36 77
+LD H,#CF        26 CF
+LD (HL),#FF     36 FF
+LD H,#D7        26 D7
+LD (HL),#FF     36 FF
+LD H,#DF        26 DF
+LD (HL),#77     36 77
+; ESPERAR        
+LD B,#14        06 14
+HALT            76
+DEC B           05
+JR NZ,#FC       20 FC
+; BORRAR         
+LD A,#04        3E 04
+LD B,#00        06 00
+LD H,#C7        26 C7
+LD (HL),B       70
+LD H,#CF        26 CF
+LD (HL),B       70
+LD H,#D7        26 D7
+LD (HL),B       70
+LD H,#DF        26 DF
+LD (HL),B       70
+INC HL          23
+DEC A           3D
+JR NZ,#F0       20 F0
+DEC HL          2B
+; PREV POS       
+DEC HL          2B
+DEC C           0D
+JP NZ,#DE       C2 5B 40
+; REPEAT ALL     
+JP #4000        C3 00 40
+
+
+2E 30 0E 4D 26 C7 36 77 26 CF 36 FF 26 D7 36 FF 26 DF 36 77 23 06 02 16 0F 26 C7 72 26 CF 72 26 D7 72 26 DF 72 23 05 20 F0 26 C7 36 EE 26 CF 36 FF 26 D7 36 FF 26 DF 36 EE 06 14 76 05 20 FC 3E 04 06 00 26 C7 70 26 CF 70 26 D7 70 26 DF 70 2B 3D 20 F0 23 23 0D C2 04 40 0E 4A 26 C7 36 EE 26 CF 36 FF 26 D7 36 FF 26 DF 36 EE 2B 06 02 16 0F 26 C7 72 26 CF 72 26 D7 72 26 DF 72 2B 05 20 F0 26 C7 36 77 26 CF 36 FF 26 D7 36 FF 26 DF 36 77 06 14 76 05 20 FC 3E 04 06 00 26 C7 70 26 CF 70 26 D7 70 26 DF 70 23 3D 20 F0 2B 2B 0D C2 5B 40 C3 00 40

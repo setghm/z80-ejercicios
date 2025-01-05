@@ -1,0 +1,28 @@
+C0A2	FF	1 1 1 1   1 1 1 1
+C8A2	F6	1 1 1 1   0 1 1 0
+D0A2	F6	1 1 1 1   0 1 1 0
+D8A2	FF	1 1 1 1   1 1 1 1
+
+Posicion debajo de A: C0A2
+
+LD HL,#C0A2
+LD (HL),#FF
+LD H,#C8
+LD (HL),#F6
+LD H,#D0
+LD (HL),#F6
+LD H,#D8
+LD (HL),#FF
+JR #FE
+
+21 A2 C0
+36 FF
+26 C8
+36 F6
+26 D0
+36 F6
+26 D8
+36 FF
+18 FE
+
+21 A2 C0 36 FF 26 C8 36 F6 26 D0 36 F6 26 D8 36 FF 18 FE

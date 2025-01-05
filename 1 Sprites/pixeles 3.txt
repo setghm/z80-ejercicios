@@ -1,0 +1,412 @@
+a
+hl
+de
+bc
+
+26 ld h,*	7C ld a,h
+2E ld l,*	7D ld a,l
+16 ld d,*	7A ld a,d
+1E ld e,*	7B ld a,e
+06 ld b,*	78 ld a,b
+0E ld c,*	79 ld a,c
+
+; Dibujar 8 rayas de colores
+
+ld h,#FF
+ld l,#F0
+ld d,#00
+ld e,#0F
+ld a,h
+ld (#C000),a
+ld a,l
+ld (#C800),a
+ld a,d
+ld (#D000),a
+ld a,e
+ld (#D800),a
+ld a,h
+ld (#E000),a
+ld a,l
+ld (#E800),a
+ld a,d
+ld (#F000),a
+ld a,e
+ld (#F800),a
+jr #4028
+
+26 FF 2E F0 16 00 1E 0F 7C 32 00 C0 7D 32 00 C8
+7A 32 00 D0 7B 32 00 D8 7C 32 00 E0 7D 32 00 E8
+7A 32 00 F0 7B 32 00 F8 18 FE
+
+;; optimized
+
+ld a,#FF
+ld (#C000),a
+ld (#E000),a
+ld a,#F0
+ld (#C800),a
+ld (#E800),a
+ld a,#00
+ld (#D000),a
+ld (#F000),a
+ld a,#0F 0000 1111 -> 1111 0000 -> 10101010
+ld (#D800),a
+ld (#F800),a
+jr
+
+3E FF 32 00 C0 32 00 E0 3E F0 32 00 C8 32 00 E8
+3E 00 32 00 D0 32 00 F0 3E 0F 32 00 D8 32 00 F8
+18 FE
+
+; Dibujar las 8 rayas subrayando a READY
+
+ld h,#FF
+ld l,#00
+ld d,#F0
+ld e,#0F
+ld a,h
+ld (#C370),a
+ld (#C371),a
+ld (#C372),a
+ld (#C373),a
+ld (#C374),a
+ld (#C375),a
+ld (#C376),a
+ld (#C377),a
+ld (#C378),a
+ld (#C379),a
+ld a,l
+ld (#CB70),a
+ld (#CB71),a
+ld (#CB72),a
+ld (#CB73),a
+ld (#CB74),a
+ld (#CB75),a
+ld (#CB76),a
+ld (#CB77),a
+ld (#CB78),a
+ld (#CB79),a
+ld a,d
+ld (#D370),a
+ld (#D371),a
+ld (#D372),a
+ld (#D373),a
+ld (#D374),a
+ld (#D375),a
+ld (#D376),a
+ld (#D377),a
+ld (#D378),a
+ld (#D379),a
+ld a,e
+ld (#DB70),a
+ld (#DB71),a
+ld (#DB72),a
+ld (#DB73),a
+ld (#DB74),a
+ld (#DB75),a
+ld (#DB76),a
+ld (#DB77),a
+ld (#DB78),a
+ld (#DB79),a
+ld a,h
+ld (#E370),a
+ld (#E371),a
+ld (#E372),a
+ld (#E373),a
+ld (#E374),a
+ld (#E375),a
+ld (#E376),a
+ld (#E377),a
+ld (#E378),a
+ld (#E379),a
+ld a,l
+ld (#EB70),a
+ld (#EB71),a
+ld (#EB72),a
+ld (#EB73),a
+ld (#EB74),a
+ld (#EB75),a
+ld (#EB76),a
+ld (#EB77),a
+ld (#EB78),a
+ld (#EB79),a
+ld a,d
+ld (#F370),a
+ld (#F371),a
+ld (#F372),a
+ld (#F373),a
+ld (#F374),a
+ld (#F375),a
+ld (#F376),a
+ld (#F377),a
+ld (#F378),a
+ld (#F379),a
+ld a,e
+ld (#FB70),a
+ld (#FB71),a
+ld (#FB72),a
+ld (#FB73),a
+ld (#FB74),a
+ld (#FB75),a
+ld (#FB76),a
+ld (#FB77),a
+ld (#FB78),a
+ld (#FB79),a
+jr
+
+26 FF 2E 00 16 F0 1E 0F 7C 32 70 C3 32 71 C3 32
+72 C3 32 73 C3 32 74 C3 32 75 C3 32 76 C3 32 77
+C3 32 78 C3 32 79 C3 7D 32 70 CB 32 71 CB 32 72
+CB 32 73 CB 32 74 CB 32 75 CB 32 76 CB 32 77 CB
+32 78 CB 32 79 CB 7A 32 70 D3 32 71 D3 32 72 D3
+32 73 D3 32 74 D3 32 75 D3 32 76 D3 32 77 D3 32
+78 D3 32 79 D3 7B 32 70 DB 32 71 DB 32 72 DB 32
+73 DB 32 74 DB 32 75 DB 32 76 DB 32 77 DB 32 78
+DB 32 79 DB 7C 32 70 E3 32 71 E3 32 72 E3 32 73
+E3 32 74 E3 32 75 E3 32 76 E3 32 77 E3 32 78 E3
+32 79 E3 7D 32 70 EB 32 71 EB 32 72 EB 32 73 EB
+32 74 EB 32 75 EB 32 76 EB 32 77 EB 32 78 EB 32
+79 EB 7A 32 70 F3 32 71 F3 32 72 F3 32 73 F3 32
+74 F3 32 75 F3 32 76 F3 32 77 F3 32 78 F3 32 79
+F3 7B 32 70 FB 32 71 FB 32 72 FB 32 73 FB 32 74
+FB 32 75 FB 32 76 FB 32 77 FB 32 78 FB 32 79 FB
+18 FE
+
+;; optimized
+
+ld hl,#FFFF
+ld (#C370),hl
+ld (#C372),hl
+ld (#C374),hl
+ld (#C376),hl
+ld (#C378),hl
+ld (#E370),hl
+ld (#E372),hl
+ld (#E374),hl
+ld (#E376),hl
+ld (#E378),hl
+ld hl,#0000
+ld (#CB70),hl
+ld (#CB72),hl
+ld (#CB74),hl
+ld (#CB76),hl
+ld (#CB78),hl
+ld (#EB70),hl
+ld (#EB72),hl
+ld (#EB74),hl
+ld (#EB76),hl
+ld (#EB78),hl
+ld hl,#F0F0
+ld (#D370),hl
+ld (#D372),hl
+ld (#D374),hl
+ld (#D376),hl
+ld (#D378),hl
+ld (#F370),hl
+ld (#F372),hl
+ld (#F374),hl
+ld (#F376),hl
+ld (#F378),hl
+ld hl,#0F0F
+ld (#DB70),hl
+ld (#DB72),hl
+ld (#DB74),hl
+ld (#DB76),hl
+ld (#DB78),hl
+ld (#FB70),hl
+ld (#FB72),hl
+ld (#FB74),hl
+ld (#FB76),hl
+ld (#FB78),hl
+jr
+
+21 FF FF 22 70 C3 22 72 C3 22 74 C3 22 76 C3 22
+78 C3 22 70 E3 22 72 E3 22 74 E3 22 76 E3 22 78
+E3 21 00 00 22 70 CB 22 72 CB 22 74 CB 22 76 CB
+22 78 CB 22 70 EB 22 72 EB 22 74 EB 22 76 EB 22
+78 EB 21 0F 0F 22 70 DB 22 72 DB 22 74 DB 22 76
+DB 22 78 DB 18 00 22 70 FB 22 72 FB 22 74 FB 22
+76 FB 22 78 FB 18 FE
+
+; Dibujar un rectangulo alrededor de una palabra
+
+ld a,#FF
+ld (#F23E),a
+ld (#F23F),a
+ld (#F240),a
+ld (#F241),a
+ld (#F242),a
+ld (#F243),a
+ld (#FA3E),a
+ld (#FA3F),a
+ld (#FA40),a
+ld (#FA41),a
+ld (#FA42),a
+ld (#FA43),a
+ld (#C2DE),a
+ld (#C2DF),a
+ld (#C2E0),a
+ld (#C2E1),a
+ld (#C2E2),a
+ld (#C2E3),a
+ld (#CADE),a
+ld (#CADF),a
+ld (#CAE0),a
+ld (#CAE1),a
+ld (#CAE2),a
+ld (#CAE3),a
+ld a,#CC
+ld (#F244),a
+ld (#FA44),a
+ld a,#03
+ld (#F23D),a
+ld (#FA3D),a
+ld (#C28D),a
+ld (#CA8D),a
+ld (#D28D),a
+ld (#DA8D),a
+ld (#E28D),a
+ld (#EA8D),a
+ld (#F28D),a
+ld (#FA8D),a
+ld a,#33
+ld (#C2DD),a
+ld (#CADD),a
+ld a,#0C
+ld (#C2E4),a
+ld (#CAE4),a
+ld (#C294),a
+ld (#CA94),a
+ld (#D294),a
+ld (#DA94),a
+ld (#E294),a
+ld (#EA94),a
+ld (#F294),a
+ld (#FA94),a
+jr
+
+; optimized
+
+3E FF 32 3E F2 32 3F F2 32 40 F2 32 41 F2 32 42
+F2 32 43 F2 32 3E FA 32 3F FA 32 40 FA 32 41 FA
+32 42 FA 32 43 FA 32 DE C2 32 DF C2 32 E0 C2 32
+E1 C2 32 E2 C2 32 E3 C2 32 DE CA 32 DF CA 32 E0
+CA 32 E1 CA 32 E2 CA 32 E3 CA 3E CC 32 44 F2 32
+44 FA 3E 03 32 3D F2 32 3D FA 32 8D C2 32 8D CA
+32 8D D2 32 8D DA 32 8D E2 32 8D EA 32 8D F2 32
+8D FA 3E 33 32 DD C2 32 DD CA 3E 0C 32 E4 C2 32
+E4 CA 32 94 C2 32 94 CA 32 94 D2 32 94 DA 32 94
+E2 32 94 EA 32 94 F2 32 94 FA 18 FE
+
+; original
+
+26 FF 7C 32 3E F2 32 3F F2 32 40 F2 32 41 F2 32
+42 F2 32 43 F2 32 3E FA 32 3F FA 32 40 FA 32 41
+FA 32 42 FA 32 43 FA 32 43 FA 3E CC 32 44 F2 32
+44 FA 3E 03 32 3D F2 32 3D FA 32 8D C2 32 8D CA
+32 8D D2 32 8D DA 32 8D E2 32 8D EA 32 8D F2 32
+8D FA 3E 33 32 DD C2 32 DD CA 7C 32 DE C2 32 DF
+C2 32 E0 C2 32 E1 C2 32 E2 C2 32 E3 C2 32 DE CA
+32 DF CA 32 E0 CA 32 E1 CA 32 E2 CA 32 E3 CA 3E
+0C 32 E4 C2 32 E4 CA 32 94 C2 32 94 CA 32 94 D2
+32 94 DA 32 94 E2 32 94 EA 32 94 F2 32 94 FA 18
+FE
+
+;; optimized
+
+ld hl,#FFFF
+ld (#F23E),hl
+ld (#F240),hl
+ld (#F242),hl
+ld (#FA3E),hl
+ld (#FA40),hl
+ld (#FA42),hl
+ld (#C2DE),hl
+ld (#C2E0),hl
+ld (#C2E2),hl
+ld (#CADE),hl
+ld (#CAE0),hl
+ld (#CAE2),hl
+ld a,#CC
+ld (#F244),a
+ld (#FA44),a
+ld a,#03
+ld (#F23D),a
+ld (#FA3D),a
+ld (#C28D),a
+ld (#CA8D),a
+ld (#D28D),a
+ld (#DA8D),a
+ld (#E28D),a
+ld (#EA8D),a
+ld (#F28D),a
+ld (#FA8D),a
+ld a,#33
+ld (#C2DD),a
+ld (#CADD),a
+ld a,#0C
+ld (#C2E4),a
+ld (#CAE4),a
+ld (#C294),a
+ld (#CA94),a
+ld (#D294),a
+ld (#DA94),a
+ld (#E294),a
+ld (#EA94),a
+ld (#F294),a
+ld (#FA94),a
+jr
+
+21 FF FF 22 3E F2 22 40 F2 22 42 F2 22 3E FA 22
+40 FA 22 42 FA 22 DE C2 22 E0 C2 22 E2 C2 22 DE
+CA 22 E0 CA 22 E2 CA 3E CC 32 44 F2 32 44 FA 3E
+03 32 3D F2 32 3D FA 32 8D C2 32 8D CA 32 8D D2
+32 8D DA 32 8D E2 32 8D EA 32 8D F2 32 8D FA 3E
+33 32 DD C2 32 DD CA 3E 0C 32 E4 C2 32 E4 CA 32
+94 C2 32 94 CA 32 94 D2 32 94 DA 32 94 E2 32 94
+EA 32 94 F2 32 94 FA 18 FE
+
+; Dibujar una cara de un dado con 8x7 px en el centro
+
+ld a,#FF
+ld (#C3E6),a
+ld (#C3E7),a
+ld (#D3E6),a
+ld (#D3E7),a
+ld (#E3E6),a
+ld (#E3E7),a
+ld (#F3E6),a
+ld (#F3E7),a
+ld a,#9F
+ld (#CBE6),a
+ld (#CBE7),a
+ld (#DBE6),a
+ld (#DBE7),a
+ld (#EBE6),a
+ld (#EBE7),a
+jr
+
+3E FF 32 E6 C3 32 E7 C3 32 E6 D3 32 E7 D3 32 E6
+E3 32 E7 E3 32 E6 F3 32 E7 F3 3E 9F 32 E6 CB 32
+E7 CB 32 E6 DB 32 E7 DB 32 E6 EB 32 E7 EB 18 FE
+
+3E FF 32 E6 C3 32 E7 C3 3E 9F 32 E6 CB 32 E7 CB
+3E FF 32 E6 D3 32 E7 D3 3E 9F 32 E6 DB 32 E7 DB
+3E FF 32 E6 E3 32 E7 E3 3E 9F 32 E6 EB 32 E7 EB
+3E FF 32 E6 F3 32 E7 F3 18 FE
+
+;; optimized
+
+ld hl,#FFFF
+ld (#C3E6),hl
+ld (#D3E6),hl
+ld (#E3E6),hl
+ld (#F3E6),hl
+ld hl,#9F9F
+ld (#CBE6),hl
+ld (#DBE6),hl
+ld (#EBE6),hl
+jr
+
+21 FF FF 22 E6 C3 22 E6 D3 22 E6 E3 22 E6 F3 21
+9F 9F 22 E6 CB 22 E6 DB 22 E6 EB 18 FE

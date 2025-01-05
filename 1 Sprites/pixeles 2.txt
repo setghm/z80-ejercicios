@@ -1,0 +1,33 @@
+;4000
+ld b,#ff
+ld c,#0f
+ld a,b
+ld (#c052),a
+ld (#c053),a
+ld a,c
+ld (#c852),a
+ld (#c853),a
+ld a,b
+ld (#d052),a
+ld (#d053),a
+ld a,c
+ld (#d852),a
+ld (#d853),a
+ld a,b
+ld (#e052),a
+ld (#e053),a
+ld a,c
+ld (#e852),a
+ld (#e853),a
+ld a,b
+ld (#f052),a
+ld (#f053),a
+ld a,c
+ld (#f852),a
+ld (#f853),a
+jr #403C
+
+06 ff 0e 0f 78 32 52 c0 32 53 c0 79 32 52 c8 32
+53 c8 78 32 52 d0 32 53 d0 79 32 52 d8 32 53 d8
+78 32 52 e0 32 53 e0 79 32 52 e8 32 53 e8 78 32
+52 f0 32 53 f0 79 32 52 f8 32 53 f8 18 fe
