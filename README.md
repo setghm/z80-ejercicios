@@ -18,4 +18,22 @@ Para ejecutar cada ejercicio se debe copiar el código máquina (ya escrito en u
   <video src="https://github.com/user-attachments/assets/19d1ede2-d4e3-406a-bb0f-7a13b31734e5"></video>
 </div>
 
+### Animación de enemigos caminando
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/7e5a62cc-555a-41d0-8359-a633c3790077"></video>
+</div>
+
+### Animación reto Billie Jean
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/47204814-3c71-40b4-9f3c-e1de72e1642d"></video>
+</div>
+
+### Animación personaje disparando
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/a8861f04-32b8-44cf-9380-0658905290d1"></video>
+</div>
+
 
