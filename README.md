@@ -14,10 +14,8 @@ Para ejecutar cada ejercicio se debe copiar el código máquina (ya escrito en u
 
 ### Animación final
 
-<video src="https://github.com/user-attachments/assets/5abb51f5-0f23-42f4-9600-c824fea2282e"></video>
-
-### Reto sprite
-
-![imagen](https://github.com/user-attachments/assets/f50daae7-7fe5-465a-952c-a82fd66edff1)
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/19d1ede2-d4e3-406a-bb0f-7a13b31734e5"></video>
+</div>
 
 
